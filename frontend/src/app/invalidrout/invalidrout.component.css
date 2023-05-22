@@ -1,0 +1,55 @@
+
+div{
+    margin: 50px auto;
+    width: 500px;
+    padding: 30px;
+    border-top:3px solid #2d943e;
+    border-bottom:3px solid #2d943e;
+}
+
+h1{
+
+    margin: auto 100px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 50px;
+    letter-spacing: -0.6px;
+    word-spacing: -0.4px;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+}
+
+h2{
+
+    margin: 20px 190px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 50px;
+    letter-spacing: -0.6px;
+    word-spacing: -0.4px;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+
+
+
+}
+h3{
+
+    margin: 40px; 
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: -0.6px;
+    word-spacing: -0.4px;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+}
+
+
+

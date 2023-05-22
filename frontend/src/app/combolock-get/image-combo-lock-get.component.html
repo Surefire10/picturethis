@@ -1,0 +1,60 @@
+
+<div class = "outer_container">
+
+    <h3>Enter Image ComboLock</h3>
+    
+    <div  class = "main_container">    
+    
+        <div #userImages class = "image_chunks_container">
+    
+          <div *ngIf = "images | async as images ">
+    
+              <img class = "1" [src] = images[1].imageURL> 
+              <img class = "2" [src] = images[2].imageURL>
+              <br/>
+              <img class = "3" [src] = images[3].imageURL> 
+              <img class = "4" [src] = images[4].imageURL> 
+    
+          </div>
+          
+        </div>
+    
+        <div #grid class = "grid_container">
+
+               
+        <div  class = "grid">
+    
+            <img class = "11" />
+            <img class = "12" />
+            <img class = "13" />
+            <img class = "14" />
+    
+            <img class = "21" />
+            <img class = "22" />
+            <img class = "23" />
+            <img class = "24" />
+    
+            <img class = "31" />
+            <img class = "32" />
+            <img class = "33" />
+            <img class = "34" />
+    
+            <img class = "41" />
+            <img class = "42" />
+            <img class = "43" />
+            <img class = "44" />
+    
+    
+    
+          </div>
+        </div>
+    
+    
+        <button class = "resetButton" (click)= "resetComboLock($event)">Reset</button>
+    
+        <button class = "submitButton" (click)= "submitComboLock($event)">Submit</button>
+    
+    
+    
+      </div>
+    </div>

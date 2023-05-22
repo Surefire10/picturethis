@@ -1,0 +1,77 @@
+<body>
+
+      <div class = "main_box"> 
+
+        <h2 id = "login_title" > Log In</h2>
+
+        <form  [formGroup] = "logInForm"  method="post" action="/" enctype="multipart/form-data"  >
+   
+          <table>
+  
+           <!-- usernameOrEmail input -->
+   
+           <tr>
+             <td><input formControlName = "usernameOrEmail" 
+               [class.error_alert] = "logInForm.get('usernameOrEmail')?.invalid && logInForm.get('usernameOrEmail')?.touched" 
+               type="text"  
+               placeholder ="  Username Or Email" maxlength="40"></td>
+   
+           </tr>
+   
+           <!-- usernameOrEmail input validations -->
+   
+           <tr>
+               <small  [class.normal_state] = "!logInForm.get('usernameOrEmail')?.errors?.['required'] || 
+               logInForm.get('usernameOrEmail')?.untouched" class = "visibleError">Username Or Email is Required!</small>
+           </tr>
+         
+           <tr>
+             <small  [class.normal_state] = "!logInForm.get('usernameOrEmail')?.errors?.['isUserInputNotRegistered']"
+              class = "visibleError">That is not Anyone!</small>
+         </tr>
+         
+           <!-- password input-->
+   
+           <tr>
+             <input formControlName = "password" 
+               type="password" 
+               placeholder="  Password">
+           </tr>
+   
+           <!-- password input validations -->
+       
+           <tr>
+            <small [class.normal_state] = "!logInForm.get('password')?.errors?.['isPasswordIncorrect']"
+            class = visibleError>Password is Incorrect!</small>
+           </tr>
+         
+           <!-- Submit Button -->
+           <tr>
+           <div [class.invisibleButton] =
+           "(logInForm.get('usernameOrEmail')?.errors != null)
+           || (logInForm.get('password')?.value === null)||
+           ((logInForm.get('usernameOrEmail')?.value === null))"
+           class = visibleButton >
+           <button  type="submit" id = "submit_button" (click)="onSubmit($event)" >Next</button>
+           </div>
+          </tr>
+           
+  
+           <!-- Link to Register -->
+           <tr>
+             <td> <label id = "new_user"> New? </label><a routerLink="../signup" target="_blank">Create an Account!</a> </td>
+           </tr>
+         </table>
+      
+       </form>
+     </div>
+   
+     {{logInForm.value| json}}
+     <br/>
+     {{logInForm.get('password')?.errors| json}}
+
+
+    
+   </body>
+   
+   

@@ -1,0 +1,141 @@
+
+.main_box{
+    
+    margin: 100px auto auto auto;
+    width: 275px;
+    height: auto;
+    border-top:3px solid #2d943e;
+    border-bottom:3px solid #2d943e;
+    
+  }
+
+  
+  
+
+  #login_title{
+  
+    margin: 20px 40px 20px 20px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 40px;
+    letter-spacing: -0.6px;
+    word-spacing: -0.4px;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    text-align: center;
+    
+  }
+
+  #login_form{
+
+    margin: auto;
+
+  }
+
+  
+  
+  input[type = text], input[ type = password]{
+  
+    
+    width:  250px;
+    height: 30px;
+    margin: 5px 2px 10px 0px;
+    background-color: whitesmoke
+  
+  
+  }
+
+ 
+  
+ 
+  #new_user{
+
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: whitesmoke;
+    font-weight: 100;
+    margin: 10px 5px 50px 40px;
+  } 
+
+  a:link{
+
+   color: #2d943e;
+   text-decoration: none;
+
+  }
+
+  a:visited {
+
+    color: #2d943e;
+    text-decoration: none;
+ 
+   }
+
+   a:hover{
+
+    color: whitesmoke;
+    text-decoration: none;
+ 
+   }
+  
+
+ 
+
+  #submit_button{
+
+     margin: 15px 40px 10px 80px;
+  }
+
+ 
+  .error_alert{
+  
+    
+    border: 2px solid rgb(178, 22, 22);
+  
+  }
+
+  .error_message{
+  
+    color: rgb(178, 22, 22);
+  
+  }
+ 
+
+  .visibleError{
+
+    display: block;
+    color: red;
+    
+  }
+  
+  .normal_state{
+
+    display: none;
+
+  }
+
+  .visibleOk{
+
+    display:block;
+    color: #2d943e;
+
+  }
+
+  
+  .visibleButton{
+
+    display: block;
+    
+  }
+
+  .invisibleButton{
+
+    display: none;
+    
+  }
+  
+
+  
+  
+  
