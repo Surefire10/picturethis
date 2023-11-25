@@ -30,8 +30,10 @@ This web app has not been deployed yet but you can take a look at it by cloning 
     2.3.Select and open PictureThisApplication and run it. Springboot Server should now be          running on port 8080.
     
     
-    
-  
+<h3>That's cool and all, but why?</h3>
+
+
+Well, this project was my intro to full stack development as a whole and it was such an intresting idea. Plus it is always nice to invent and improve on new ways of user authentication while maintaining accessibility and user-friendliness. 
 
 
 
