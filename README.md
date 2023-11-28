@@ -1,9 +1,5 @@
-PictureThis is an implementation of an image-based graphical password full stack 
-authentication system. 
-The Backend is a SpringBoot application while the frontend is an Angular 15 application.
 
-
-This web app is meant to add an additional layer of security to your standard username and password combination while also being easier to remember than other text-based verification methods like security questions, etc.
+PictureThis is meant to add an additional layer of security to your standard username and password combination while also being easier to remember than other text-based verification methods like security questions, etc.
 
 <h3> How it works:</h3>
 
@@ -30,8 +26,10 @@ This web app has not been deployed yet but you can take a look at it by cloning 
     2.3.Select and open PictureThisApplication and run it. Springboot Server should now be          running on port 8080.
     
     
-    
-  
+<h3>That's cool and all, but why?</h3>
+
+
+Well, this project was my intro to full stack development as a whole and it was such an intresting idea. Plus it is always nice to invent and improve on new ways of user authentication while maintaining accessibility and user-friendliness. 
 
 
 
