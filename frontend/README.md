@@ -24,6 +24,8 @@ Most browsers dont allow for local files to be opend for security reasons
 Now make note of the port number in  the output of  terminal, something kinda like http://localhost:8081 will appear. Now everything in that folder will be okay for browser to serve under that port number.
 Example : "img src = "http://localhost:8081/imagename.png"
 
+Make sure to navigate to ImageController.java in backend and change port number to the one in http-server terminal in the first two get methods if needed.
+
 
 
 
