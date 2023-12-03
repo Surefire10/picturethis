@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router"
+import { NavigationEnd, Router } from "@angular/router"
+import { filter } from 'rxjs/operators'
+
 
 @Component({
   selector: 'app-registration-done',
@@ -9,12 +11,26 @@ import { Router } from "@angular/router"
 export class RegistrationDoneComponent {
 
 
-  constructor(private router: Router){}
+  constructor(private router: Router){
+
+
+    this.router.events
+    .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
+    .subscribe(event => {
+      if (
+        event.id === 1 &&
+        event.url === event.urlAfterRedirects
+      ) {
+        this.router.navigate(["user/sign-up"]);
+        alert("Please sign up first")
+      }
+    })
+  }
 
 
   logIn(event : any){
 
-      this.router.navigate(["user/login"])
+      this.router.navigate(["user/log-in"])
 
   }
 

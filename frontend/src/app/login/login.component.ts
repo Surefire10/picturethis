@@ -56,7 +56,7 @@ export class LoginComponent {
               this.retrieveImageChunksService.setCurrentUserInput(formData.get('usernameOrEmail')!)
               this.handleUserComboLockService.setCurrentUserInput(formData.get('usernameOrEmail')!)
               this.retrieveImageChunksService.getImageChunks()
-              this.router.navigate(["user/validate_image_combo_lock"]);
+              this.router.navigate(["user/validate-image-combo-lock"]);
               
             } else{
 

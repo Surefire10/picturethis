@@ -1,19 +1,39 @@
 
-div{
-    margin: 50px auto;
-    width: 500px;
-    padding: 30px;
+body{
+
+    position: relative;
+    display: flex;
+}
+
+
+
+.main-container{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 3.0rem auto;
+    width: 60%;
+    height: fit-content;
+    padding: 3.0rem;
     border-top:3px solid #2d943e;
     border-bottom:3px solid #2d943e;
+    
+}
+
+.big-text-container{
+
+
+    text-align: center;
+
+
 }
 
 h1{
 
-    margin: auto 100px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 50px;
-    letter-spacing: -0.6px;
-    word-spacing: -0.4px;
+    font-size: 4.0rem;
     color: white;
     font-weight: 400;
     font-style: normal;
@@ -23,33 +43,55 @@ h1{
 
 h2{
 
-    margin: 20px 190px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 50px;
-    letter-spacing: -0.6px;
-    word-spacing: -0.4px;
+    font-size: 4.0rem;
     color: white;
     font-weight: 400;
     font-style: normal;
     font-variant: small-caps;
     text-transform: none;
-
-
-
+    text-align: center;
 }
 h3{
 
-    margin: 40px; 
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 25px;
-    letter-spacing: -0.6px;
-    word-spacing: -0.4px;
+    font-size: 1.5rem;
     color: white;
     font-weight: 400;
     font-style: normal;
     font-variant: small-caps;
     text-transform: none;
+    text-align: center;
+
 }
 
+/*900px*/
+@media (max-width:40.625rem) {
 
+    h1{
 
+        font-size: 2.5rem;
+
+    }
+
+    h2{
+
+        font-size: 2.0rem;
+
+    }
+
+   
+
+}
+
+/*400px*/
+
+@media (max-width:25rem) {
+
+    h1{
+
+        font-size: 2.5rem;
+
+    }
+
+}

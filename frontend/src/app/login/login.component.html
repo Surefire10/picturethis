@@ -1,77 +1,46 @@
 <body>
-
-      <div class = "main_box"> 
-
-        <h2 id = "login_title" > Log In</h2>
-
-        <form  [formGroup] = "logInForm"  method="post" action="/" enctype="multipart/form-data"  >
-   
-          <table>
+  <div class = "main-box"> 
+    <div class = "title-box">
+      <h2>Log In</h2>
+    </div>
+    <div class = "form-box">
+      <form  [formGroup] = "logInForm"  method="post" action="/" enctype="multipart/form-data">
+        <!-- usernameOrEmail input -->
+        <input formControlName = "usernameOrEmail" 
+            [class.error_alert] = "logInForm.get('usernameOrEmail')?.invalid && logInForm.get('usernameOrEmail')?.touched" 
+            type="text"  
+            placeholder ="  Username Or Email" maxlength="40">
+        <!-- usernameOrEmail input validations -->
+        <small  [class.normal-state] = "!logInForm.get('usernameOrEmail')?.errors?.['required'] || 
+        logInForm.get('usernameOrEmail')?.untouched" class = "visible-error">Username Or Email is Required!</small>
+        <small  [class.normal-state] = "!logInForm.get('usernameOrEmail')?.errors?.['isUserInputNotRegistered']"
+        class = "visible-error">That is not Anyone!</small>
+        <!-- password input-->
+        <input formControlName = "password" 
+          type="password" 
+          placeholder="  Password">
+        <!-- password input validations -->
+        
+        <small [class.normal-state] = "!logInForm.get('password')?.errors?.['isPasswordIncorrect']"
+        class = visible-error>Password is Incorrect!</small>
+        <!-- Submit Button -->
   
-           <!-- usernameOrEmail input -->
-   
-           <tr>
-             <td><input formControlName = "usernameOrEmail" 
-               [class.error_alert] = "logInForm.get('usernameOrEmail')?.invalid && logInForm.get('usernameOrEmail')?.touched" 
-               type="text"  
-               placeholder ="  Username Or Email" maxlength="40"></td>
-   
-           </tr>
-   
-           <!-- usernameOrEmail input validations -->
-   
-           <tr>
-               <small  [class.normal_state] = "!logInForm.get('usernameOrEmail')?.errors?.['required'] || 
-               logInForm.get('usernameOrEmail')?.untouched" class = "visibleError">Username Or Email is Required!</small>
-           </tr>
-         
-           <tr>
-             <small  [class.normal_state] = "!logInForm.get('usernameOrEmail')?.errors?.['isUserInputNotRegistered']"
-              class = "visibleError">That is not Anyone!</small>
-         </tr>
-         
-           <!-- password input-->
-   
-           <tr>
-             <input formControlName = "password" 
-               type="password" 
-               placeholder="  Password">
-           </tr>
-   
-           <!-- password input validations -->
-       
-           <tr>
-            <small [class.normal_state] = "!logInForm.get('password')?.errors?.['isPasswordIncorrect']"
-            class = visibleError>Password is Incorrect!</small>
-           </tr>
-         
-           <!-- Submit Button -->
-           <tr>
-           <div [class.invisibleButton] =
-           "(logInForm.get('usernameOrEmail')?.errors != null)
-           || (logInForm.get('password')?.value === null)||
-           ((logInForm.get('usernameOrEmail')?.value === null))"
-           class = visibleButton >
-           <button  type="submit" id = "submit_button" (click)="onSubmit($event)" >Next</button>
-           </div>
-          </tr>
-           
+        <div [class.invisible-] =
+        "(logInForm.get('usernameOrEmail')?.errors != null)
+        || (logInForm.get('password')?.value === null)||
+        ((logInForm.get('usernameOrEmail')?.value === null))"
+        class = visible-button >
+          <button  type="submit" id = "submit_button" (click)="onSubmit($event)" >Next</button>
+        </div>
   
-           <!-- Link to Register -->
-           <tr>
-             <td> <label id = "new_user"> New? </label><a routerLink="../signup" target="_blank">Create an Account!</a> </td>
-           </tr>
-         </table>
-      
-       </form>
-     </div>
-   
-     {{logInForm.value| json}}
-     <br/>
-     {{logInForm.get('password')?.errors| json}}
+      <!-- Link to Register -->
+      <div class = "new-user-container">
+        <label id = "new_user"> New? </label><a routerLink="../sign-up" target="_blank">Create an Account!</a> 
+      </div>
+      </form>
 
-
-    
-   </body>
-   
-   
+    </div>
+  </div>    
+</body>
+  
+  

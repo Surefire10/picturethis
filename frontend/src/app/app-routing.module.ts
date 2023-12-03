@@ -10,18 +10,17 @@ import { RegistrationDoneComponent } from './registration-done/registration-done
 import {LoginDoneComponent} from "./login-done/login-done.component"
 
 
-
 //all possible routs for your app goes here;
 //path-component pairs;
 const routes: Routes = [
 
       {path: "", component:GetstartedComponent},
-      {path: "user/signup", component: SignupComponent},
-      {path:"user/login", component: LoginComponent},
-      {path:"user/set_image_combo_lock", component:ImageComboLockComponent },
-      {path:"user/validate_image_combo_lock",component:ImageComboLockGetComponent},
+      {path: "user/sign-up", component: SignupComponent},
+      {path:"user/log-in", component: LoginComponent},
+      {path:"user/set-combo-lock", component:ImageComboLockComponent },
+      {path:"user/validate-image-combo-lock",component:ImageComboLockGetComponent},
       {path:"success", component : RegistrationDoneComponent},
-      {path:"successfull_logIn", component: LoginDoneComponent},
+      {path:"success-log-in", component: LoginDoneComponent},
 
       {path: "**", component:InvalidroutComponent} // should be there last:
 

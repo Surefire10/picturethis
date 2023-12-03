@@ -6,8 +6,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-
-
 import { AppRoutingModule,RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetstartedComponent } from './getstarted/getstarted.component';
@@ -22,7 +20,7 @@ import {RetrieveImageChunksService} from "./services/retrieve-image-chunks.servi
 import {HandleUserComboLockService} from "./services/handle-user-combo-lock.service";
 import { RegistrationDoneComponent } from './registration-done/registration-done.component';
 import { ImageComboLockGetComponent } from './combolock-get/image-combo-lock-get.component';
-import { LoginDoneComponent } from './login-done/login-done.component'
+import { LoginDoneComponent } from './login-done/login-done.component';
 
 
 

@@ -31,7 +31,7 @@ export class ImageComboLockGetComponent {
                     event.id === 1 &&
                     event.url === event.urlAfterRedirects
                   ) {
-                    this.router.navigate(["user/login"]);
+                    this.router.navigate(["user/log-in"]);
                     alert("Please Log in Again")
                   }
                 })
@@ -206,7 +206,7 @@ export class ImageComboLockGetComponent {
 
       setTimeout(() =>{
 
-          this.router.navigate(["successfull_logIn"])
+          this.router.navigate(["success-log-in"])
         },
         
         1000)

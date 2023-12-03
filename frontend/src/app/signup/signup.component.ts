@@ -116,7 +116,7 @@ export class SignupComponent{
           if(response.message === "User Registration Successful"){
 
             console.log("response: "+response.message)
-            this.router.navigate(["user/set_image_combo_lock"]);
+            this.router.navigate(["user/set-combo-lock"]);
 
           }
 

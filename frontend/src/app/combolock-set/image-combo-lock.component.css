@@ -1,48 +1,90 @@
-.outer_container{
 
+body, h1, h2, h3, h4, h5, h6 {
 
-    margin-top: 50px; 
-    height: 450px;
-    width: 1200px;
-
-
-
-}
-
-.main_container{
-
-    margin-top: 50px;
-    margin-left: 250px;
-    height: 450px;
-    width: 800px;
-    border-top:2px solid #2d943e;
-    border-bottom:2px solid #2d943e;
-
-
-}  
-
-
-h3{
-
-    margin-top: 40px;
-    margin-left: 100px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 35px;
-    letter-spacing: -0.6px;
-    word-spacing: -0.4px;
+   
+    font-family: "Trebuchet MS", Helvetica, sans-serif ;
     color: white;
     font-weight: 400;
     text-align: center;
     font-style: normal;
     font-variant: small-caps;
     text-transform: none;
+    
+}
+
+body{
+
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    min-height: 100vh;
+
+}   
+
+
+
+
+
+.outer_container{
+
+
+    position: relative;    
+    margin: 2.0rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5.0rem;
+    padding: 2.0rem;
+    width: 100%;
+
+
 
 }
 
+.title_container{
+
+    width: 100%;
+    
+}
+.title_container h3{
+
+    font-size: 2.0rem;
+
+}
+
+.main_container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top:2px solid #2d943e;
+    border-bottom:2px solid #2d943e;
+    padding: 3.0rem;
+    row-gap: 20px;
+    width: 80%;
+
+
+}
+
+.combo_container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    row-gap: 20px;
+
+}
+
+
+
+
 .image_chunks_container{
 
-
-    margin-top: 40px;
+    width: fit-content;
+    height: fit-content;
 
    
 }
@@ -63,12 +105,8 @@ img{
 .grid_container{
 
     border : 5px solid black;
-    position: absolute;
-    left: 850px;
-    top: 250px
-
-    
-
+    width: fit-content;
+    height: fit-content;
 
 }
    
@@ -76,13 +114,9 @@ img{
 .grid{
 
     display: grid;
-    width: 200px;
-    height: 205px;
     grid-template-columns: repeat(4, 50px [col-start]);
     grid-template-rows: 25% 25%;
     list-style: none;
-
-
 }
 
 
@@ -97,19 +131,192 @@ img{
 }
 
 
-.resetButton{
+.button_container{
 
-    position: absolute;
-    left: 400px;
-    top: 500px
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+}
+
+.button_container button{
+
+    width: 70px;
+    height: 35px;
+    text-align: center;
 }
 
 
 
-.submitButton{
+/*1280px*/
 
-    position: absolute;
-    left: 700px;
-    top: 500px
+@media (max-width:80rem) {
+
+    .title_container{
+
+        padding: 1.0rem;
+
+    }
+
+    .outer_container{
+
+
+        padding: 2.0rem;
+        margin: 2.0rem;
     
+    }
+
+    .main_container{
+      
+        height: 100%;
+        padding: 1.0rem;
+        width: 80%;
+        justify-content: space-around;
+        row-gap: 10px;
+        
+    }
+
+
+    .combo_container{
+
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        row-gap: 25px;
+        width: 90%;
+
+
+    }
+
+    
+
 }
+
+/* 790px */
+
+@media (max-width:49.375rem) {
+
+
+    .main_container{
+
+        padding: 2.0rem;
+        justify-content: space-around;
+    }
+
+    .combo_container{
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 10px;
+
+    }
+
+    .image_chunks_container img{
+
+        /*keeps aspect ratio intact*/
+        max-height: 40%;
+        max-width: 40%;
+        
+    
+       
+    }
+
+    .image_chunks_container{
+
+        width: 100%;
+        text-align: center;
+       
+    }
+
+
+}
+
+/* 500px */
+
+@media (max-width:31.25rem) {
+
+    .outer_container{
+
+        margin: 0.5rem;
+        row-gap: 1.0rem;
+        width: 70%;
+    }
+
+    .main_container{
+
+        padding: 3.0rem;
+        justify-content: space-around;
+    }
+    .image_chunks_container{
+
+        width: 100%;
+        text-align: center;
+       
+    }
+
+    .title_container{
+
+        margin:0;
+    }
+
+}
+
+
+
+
+/*Height bigger than 800px*/
+
+@media (min-height:50.1rem) {
+
+   .outer_container{
+
+    row-gap: 1.5rem;
+    
+   }
+
+   .main_container{
+
+    row-gap: 5.0rem;
+
+
+    }
+
+   .combo_container{
+
+    row-gap: 3.0rem;
+
+   }
+
+
+   
+
+}
+
+/*Height bigger than 1000px*/
+
+@media (min-height:62.5rem) {
+
+    .outer_container{
+
+        row-gap: 3.0rem;
+        
+       }
+    
+       .main_container{
+    
+        row-gap: 7.0rem;
+        padding: 2.0rem;
+    
+    
+        }
+    
+       .combo_container{
+    
+        row-gap: 5.0rem;
+    
+       }
+ 
+ }

@@ -1,191 +1,126 @@
-
 <body>
-
-
-  <div id = "signup_box"> 
-    <div id="title_div"><h2 id = "signup_title" > Sign Up</h2></div> 
-
+<div class = "signup-box"> 
+    <div class="title-div">
+      <h2 id = "signup_title"> Sign Up</h2>
+    </div> 
+    <div class = "form-container">
     <form  [formGroup] = "signupForm"  (ngSubmit) = onSubmit()  method="post" action="/user_registration" enctype="multipart/form-data"  id = "signup_form">
+      <!-- firstname input  -->
 
-      <table>
-          <!-- firstname input  -->
-          <tr>
-            <td><input  formControlName = "firstName"   
-              [class.errorAlert] = "signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched"
-                type="text"  name = "firstname" id = "firstName"
-                placeholder=" First Name"  maxlength="20">
-            </td> 
-          </tr>
+        <input  formControlName = "firstName"   
+          [class.errorAlert] = "signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched"
+            type="text"  name = "firstname" id = "firstName"
+            placeholder=" First Name"  maxlength="20">
 
-          <!-- firstname input validations -->
+      <!-- firstname input validations -->
+        <small [class.normalState] = "!signupForm.get('firstName')?.errors?.['required'] ||
+        signupForm.get('firstName')?.untouched" class = "visibleError"> First Name is Required! </small>
+        <small [class.normalState] = "!signupForm.get('firstName')?.errors?.['minlength'] ||
+        signupForm.get('firstName')?.untouched" class = "visibleError">First Name is Too Short! </small>
 
-          <tr> 
-            <small [class.normalState] = "!signupForm.get('firstName')?.errors?.['required'] ||
-            signupForm.get('firstName')?.untouched" class = "visibleError"> First Name is Required! </small>
-          </tr>
-          <tr> 
-            <small [class.normalState] = "!signupForm.get('firstName')?.errors?.['minlength'] ||
-            signupForm.get('firstName')?.untouched" class = "visibleError">First Name is Too Short! </small>
-          </tr>
-
-          <!-- lastname input -->
-
-          <tr>
-            <td><input formControlName = "lastName"  
-              [class.errorAlert] = "signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" 
-               type="text" id = "lastName"  
-               placeholder=" Last Name" maxlength="20" ></td>
-          </tr>
-
-          <!-- lastname input validations -->
-
-        <tr>   
-            <small [class.normalState] = "!signupForm.get('lastName')?.errors?.['required'] ||
-            signupForm.get('lastName')?.untouched" class = "visibleError">Last Name is Required!</small>
-        </tr> 
-        <tr> 
-          <small [class.normalState] = "!signupForm.get('lastName')?.errors?.['minlength'] ||
-          signupForm.get('lastName')?.untouched" class = "visibleError">Last Name is Too Short! </small>
-        </tr>
+      <!-- lastname input -->
+      <input formControlName = "lastName"  
+          [class.errorAlert] = "signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" 
+            type="text" id = "lastName"  
+            placeholder=" Last Name" maxlength="20" >
+      <!-- lastname input validations -->   
+      
+        <small [class.normalState] = "!signupForm.get('lastName')?.errors?.['required'] ||
+        signupForm.get('lastName')?.untouched" class = "visibleError">Last Name is Required!</small>
+      <small [class.normalState] = "!signupForm.get('lastName')?.errors?.['minlength'] ||
+      signupForm.get('lastName')?.untouched" class = "visibleError">Last Name is Too Short! </small>
 
         <!-- email input -->
-
-        <tr>
-          <td><input formControlName = "email" 
+         <input formControlName = "email" 
             [class.errorAlert] = "signupForm.get('email')?.invalid && signupForm.get('email')?.touched" 
             type="text" id = "email" 
-            placeholder="  Email"></td>
-        </tr>
+            placeholder="  Email">
 
         <!-- email input validations -->
-
-        <tr>
-            <small [class.normalState] = "!signupForm.get('email')?.errors?.['required'] ||
-             signupForm.get('email')?.untouched" class = "visibleError">Email Address is Required!</small>
-        </tr>
-        <tr>
-              <small [class.normalState] = "!signupForm.get('email')?.errors?.['email'] ||
-               signupForm.get('email')?.untouched" class="visibleError" >Invalid Email Address!</small>
-        </tr>
-        <tr>
-          <small [class.normalState] = "!signupForm.get('email')?.errors?.['isEmailTaken'] || 
+        <small [class.normalState] = "!signupForm.get('email')?.errors?.['required'] ||
+          signupForm.get('email')?.untouched" class = "visibleError">Email Address is Required!</small>
+        <small [class.normalState] = "!signupForm.get('email')?.errors?.['email'] ||
+          signupForm.get('email')?.untouched" class="visibleError" >Invalid Email Address!</small>
+        <small [class.normalState] = "!signupForm.get('email')?.errors?.['isEmailTaken'] || 
           signupForm.get('email')?.untouched" class = "visibleError">Email Address is Taken!</small>
-        </tr>
-        <tr>
-
         <small  [class.visibleOk] = "!signupForm.get('email')?.errors &&
         signupForm.get('email')?.touched" class = "normalState">Email Address is Available!</small>
 
-       </tr>
-
         <!-- username input -->
-
-        <tr>
-          <td><input formControlName = "username" 
-            [class.errorAlert] = "signupForm.get('username')?.invalid && signupForm.get('username')?.touched" 
-            type="text"  id = "username"
-            placeholder ="  Username" maxlength="20"></td>
-            {{signupForm.get('username')?.errors?.['isUsernameAvailable']}}
-
-        </tr>
+        <input formControlName = "username" 
+          [class.errorAlert] = "signupForm.get('username')?.invalid && signupForm.get('username')?.touched" 
+          type="text"  id = "username"
+          placeholder ="  Username" maxlength="20">
+          {{signupForm.get('username')?.errors?.['isUsernameAvailable']}}
 
         <!-- username input validations -->
-
-        <tr>
-            <small  [class.normalState] = "!signupForm.get('username')?.errors?.['required'] || 
-            signupForm.get('username')?.untouched" class = "visibleError">Username is Required!</small>
-        </tr>
-        <tr>
-          <small  [class.normalState] = "!signupForm.get('username')?.errors?.['minlength'] || 
-          signupForm.get('username')?.untouched" class = "visibleError">Username is Too Short!</small>
-      </tr>
-        <tr>
-          <small [class.normalState]= "!signupForm.get('username')?.errors?.['pattern'] || 
-          signupForm.get('username')?.untouched" class = "visibleError" >Username Can Have Letters, Numbers and Underscores Only!</small>
-        </tr>
-        <tr>
-          <small [class.normalState] = "!signupForm.get('username')?.errors?.['isUsernameTaken'] || 
-          signupForm.get('username')?.untouched" class = "visibleError">Username is Taken!</small>
-      </tr>
-      <tr>
+        <small  [class.normalState] = "!signupForm.get('username')?.errors?.['required'] || 
+        signupForm.get('username')?.untouched" class = "visibleError">Username is Required!</small>
+        <small  [class.normalState] = "!signupForm.get('username')?.errors?.['minlength'] || 
+        signupForm.get('username')?.untouched" class = "visibleError">Username is Too Short!</small>
+        <small [class.normalState]= "!signupForm.get('username')?.errors?.['pattern'] || 
+        signupForm.get('username')?.untouched" class = "visibleError" >Username Can Have Letters, Numbers and Underscores Only!</small>
+        <small [class.normalState] = "!signupForm.get('username')?.errors?.['isUsernameTaken'] || 
+        signupForm.get('username')?.untouched" class = "visibleError">Username is Taken!</small>
         <small  [class.visibleOk] = "!signupForm.get('username')?.errors &&
         signupForm.get('username')?.touched" class = "normalState">Username is Available!</small>
-    </tr>
+    
         <!-- password input-->
 
-        <tr>
-          <td><input formControlName = "password" [class.errorAlert] = "signupForm.get('password')?.errors?.['pattern'] || 
+        
+          <input formControlName = "password" [class.errorAlert] = "signupForm.get('password')?.errors?.['pattern'] || 
             signupForm.get('password')?.errors?.['required'] &&
             signupForm.get('password')?.touched" 
             type="password"  id = "password" 
-            placeholder="  Password"  (change)="onPasswordTyped($event)" ></td>
-        </tr>
+            placeholder="  Password"  (change)="onPasswordTyped($event)" >
+        
 
         <!-- password input validations -->
 
-        <tr>
-            <small [class.normalState] = "!signupForm.get('password')?.errors?.['required'] ||
-            signupForm.get('password')?.untouched" class="visibleError">Password is Required! </small>
-        </tr>
-        <tr>
+      
+          <small [class.normalState] = "!signupForm.get('password')?.errors?.['required'] ||
+          signupForm.get('password')?.untouched" class="visibleError">Password is Required! </small>
           <small [class.normalState] = "!signupForm.get('password')?.errors?.['minlength'] ||
             signupForm.get('password')?.untouched" class="visibleError">Password is Too Short! </small>
-        </tr>
-        <tr> 
-              <small [class.normalState] = "!signupForm.get('password')?.errors?.['pattern'] ||
-              signupForm.get('password')?.untouched" class="visibleError">
-              Password Must Have At Least One Uppercase Letter, 
-              <br/>One Lowercase Letter, 
-              <br/>One Number and 
-              <br/>One Special Character </small>
+          <small [class.normalState] = "!signupForm.get('password')?.errors?.['pattern'] ||
+          signupForm.get('password')?.untouched" class="visibleError">
+          Password Must Have At Least One Uppercase Letter, 
+          <br/>One Lowercase Letter, 
+          <br/>One Number and 
+          <br/>One Special Character </small>
               
-        </tr>
-
         <!-- password confirmation input-->
-        <tr>
-          <td><input formControlName = "passwordConfirmation" 
+        
+          <input formControlName = "passwordConfirmation" 
             [class.errorAlert] = "signupForm.get('passwordConfirmation')?.errors?.['isPasswordConfirmationMismatched'] 
             && signupForm.get('passwordConfirmation')?.touched"  
-            type="password" id = "matchingPassword"    placeholder=" Confirm Password"></td>
-        </tr>
-
+            type="password" id = "matchingPassword" placeholder=" Confirm Password">
+        
         <!-- password confirmation input Validations-->
 
-    
-        <tr>
           <small [class.normalState] = "!signupForm.get('passwordConfirmation')?.errors?.['required'] ||
            signupForm.get('passwordConfirmation')?.untouched"
              class="visibleError">Confirm Password! </small>
-        </tr>
-        <tr>
           <small [class.normalState] = "!signupForm.get('passwordConfirmation')?.errors?.['isPasswordConfirmationMismatched']"
              class="visibleError">Passwords do not Match! </small>
-        </tr>
-       
 
        <!-- image input-->
-        <tr>
-          <td>
-              <input formControlName = "image" 
-               type="file"  id ="image"  accept="image/*" 
-               (change)="onImageSelection($event)">
-          </td>
-        </tr>
-
+        <div class = "image-input-container">
+          <input formControlName = "image" 
+          type="file"  id ="image-input"  accept="image/*" 
+          (change)="onImageSelection($event)">
+        </div>
+     
+    
        <!-- image input validation-->
 
-        <tr>
-          <small [class.normalState] = "!signupForm.get('image')?.errors?.['required'] ||
-            signupForm.get('image')?.untouched" class="visibleError">Please Upload an Image! </small>
-        </tr>
-        <tr>
-          <small [class.normalState] = "!signupForm.get('image')?.errors?.['isImageTooBig']"
-           class="visibleError">Image is  Too Big! <br/> Image Should Be Less Than 5MB! </small>
-        </tr>
-
+        <small [class.normalState] = "!signupForm.get('image')?.errors?.['required'] ||
+          signupForm.get('image')?.untouched" class="visibleError">Please Upload an Image! </small>
+        <small [class.normalState] = "!signupForm.get('image')?.errors?.['isImageTooBig']"
+          class="visibleError">Image is  Too Big! <br/> Image Should Be Less Than 5MB! </small>
+    
         <!-- Submit Button -->
-        <tr>
-          <td>
+        
             <div [class.invisibleButton] =
               "(signupForm.get('firstName')?.errors ||
                signupForm.get('lastName')?.errors) ||
@@ -195,16 +130,12 @@
                signupForm.get('passwordConfirmation')?.errors) || 
                signupForm.get('image')?.errors" 
             class = visibleButton >
-           
             <button type="submit" id = "submit_button">Next</button>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td> <label id = "have_an_account"> Already Registered?</label><a routerLink="../login" target="_blank">Log in</a> </td>
-        </tr>
-      </table>
-   
+            <div>
+              <label id = "have_an_account"> Already Registered?</label><a routerLink="../log-in" target="_blank">Log in</a> 
+            </div>
     </form>
-  </div>
+    </div>
+</div>
 </body>

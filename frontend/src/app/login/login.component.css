@@ -1,141 +1,297 @@
 
-.main_box{
-    
-    margin: 100px auto auto auto;
-    width: 275px;
-    height: auto;
-    border-top:3px solid #2d943e;
-    border-bottom:3px solid #2d943e;
-    
+
+body{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h2{
+
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: -0.6px;
+  word-spacing: -0.4px;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  
+}
+
+.main-box{
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  row-gap: 5px;
+  width: 40%;
+  height: 30%;
+  padding: 2.0rem;
+  margin: 4.0rem;
+  border-top:3px solid #2d943e;
+  border-bottom:3px solid #2d943e;
+ 
+  
+}
+
+
+.form-box{
+
+  text-align: center;
+
+}
+
+
+.title-box h2{
+
+  text-align: center;
+  
+}
+
+
+input[type = text], input[ type = password]{
+
+  
+  width:  80%;
+  height: 30px;
+  margin: 0.5rem;
+  background-color: whitesmoke
+
+
+}
+
+.new-user-container{
+
+  padding: 0.2rem;
+  margin: 0.5rem;
+}
+
+#new_user{
+
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: whitesmoke;
+  font-weight: 100;
+} 
+
+a:link{
+
+  color: #2d943e;
+  text-decoration: none;
+
+}
+
+a:visited {
+
+  color: #2d943e;
+  text-decoration: none;
+
+}
+
+a:hover{
+
+  color: whitesmoke;
+  text-decoration: none;
+
+}
+
+
+#submit_button{
+
+  padding: 0.5rem;
+  
+}
+
+
+.error_alert{
+
+  border: 2px solid rgb(178, 22, 22);
+
+}
+
+.error_message{
+
+  color: rgb(178, 22, 22);
+
+}
+
+
+.visible-error{
+
+  display: block;
+  color: red;
+  
+}
+
+.normal-state{
+
+  display: none;
+
+}
+
+.visible-ok{
+
+  display:block;
+  color: #2d943e;
+
+}
+
+
+.visible-button{
+
+  display: block;
+  text-align: center;
+  margin: 0.5rem;
+  
+}
+
+.invisible-button{
+
+  display: none;
+  
+}
+
+
+  
+  
+/*1285px*/
+
+@media (min-width: 80.313rem) {
+
+  .form-box{
+
+    width: 33%;
+  }
+
+  .main-box{
+
+    width: 50%;
+
   }
 
   
-  
 
-  #login_title{
-  
-    margin: 20px 40px 20px 20px;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 40px;
-    letter-spacing: -0.6px;
-    word-spacing: -0.4px;
-    color: white;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
-    text-align: center;
+}
+
+/* 1024px  */
+
+@media (min-width: 64rem) {
+
+  .main-box{
+
+    width: 20%;
+    height: 35%;
+
+  }
+
+  .form-box{
+
+    width: 30%;
     
   }
 
-  #login_form{
+  .title-box{
 
-    margin: auto;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+  .title-box h2{
+
+    font-size: 2.0rem
+  }
+
+}
+
+/* 900px */
+
+@media (min-width: 56.25rem) {
+
+  .main-box{
+
+    width: 40%;
 
   }
 
+  .form-box{
+
+    width: 70%;
+  }
+
+ 
+
+}
+
+/* 600px */
+
+
+@media (max-width: 37.5rem){
+
+  .form-box{
+
+    width: 90%;
+  }
+
+  .main-box{
+
+    width: 60%;
+
+  }
+
+}
+
+/* 475px */
+
+@media (max-width: 29.875rem){
+
+
+  .main-box{
+
+    padding: 3.0rem;
+    width: 60%;
+
+  }
+  .form-box{
+
+    width: 90%;
+  }
   
+  .image-input-container{
+
+    text-align: left;
+  }
+
   
   input[type = text], input[ type = password]{
-  
+
     
-    width:  250px;
+    width:  90%;
     height: 30px;
-    margin: 5px 2px 10px 0px;
+    margin: 0.5rem;
     background-color: whitesmoke
-  
-  
-  }
 
- 
-  
- 
-  #new_user{
-
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    color: whitesmoke;
-    font-weight: 100;
-    margin: 10px 5px 50px 40px;
-  } 
-
-  a:link{
-
-   color: #2d943e;
-   text-decoration: none;
 
   }
+}
 
-  a:visited {
+/*Height bigger than 900px*/
 
-    color: #2d943e;
-    text-decoration: none;
- 
-   }
+@media (min-height:50rem) {
 
-   a:hover{
+  .main-box{
 
-    color: whitesmoke;
-    text-decoration: none;
- 
-   }
-  
-
- 
-
-  #submit_button{
-
-     margin: 15px 40px 10px 80px;
-  }
-
- 
-  .error_alert{
-  
-    
-    border: 2px solid rgb(178, 22, 22);
-  
-  }
-
-  .error_message{
-  
-    color: rgb(178, 22, 22);
-  
-  }
- 
-
-  .visibleError{
-
-    display: block;
-    color: red;
-    
-  }
-  
-  .normal_state{
-
-    display: none;
-
-  }
-
-  .visibleOk{
-
-    display:block;
-    color: #2d943e;
-
-  }
-
-  
-  .visibleButton{
-
-    display: block;
+    height: 20%;
+    padding: 5.0rem;
     
   }
 
-  .invisibleButton{
+}
 
-    display: none;
-    
-  }
-  
-
-  
-  
   

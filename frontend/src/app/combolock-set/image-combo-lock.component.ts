@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, } from '@angular/core';
 import { RetrieveImageChunksService } from '../services/retrieve-image-chunks.service';
+import {DomSanitizer} from '@angular/platform-browser';
 import { IImage } from '../IImage';
-import { filter } from 'rxjs/operators'
+import { filter, map, tap } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { HandleUserComboLockService } from '../services/handle-user-combo-lock.service';
@@ -29,7 +30,8 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
   constructor(private retrieveImageChunksService :RetrieveImageChunksService,
               private handleUserComboLockService : HandleUserComboLockService,
               private renderer: Renderer2,
-              private router: Router){
+              private router: Router,
+              private sanitizer:DomSanitizer){
                 this.router.events
                 .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
                 .subscribe(event => {
@@ -37,7 +39,7 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
                     event.id === 1 &&
                     event.url === event.urlAfterRedirects
                   ) {
-                    this.router.navigate(["user/signup"]);
+                    this.router.navigate(["user/sign-up"]);
                     alert("Please Sign up Again")
                   }
                 })
@@ -53,10 +55,7 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
   ngOnInit() {
 
     this.images = this.retrieveImageChunksService.getImageChunks()
-    
-    
-    
-
+  
 
     }
 
@@ -135,7 +134,7 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
 
 
 
-  resetComboLock(event : any){
+  resetComboLock(){
 
 
     var gridTileContainerElement = this.grid.nativeElement.getElementsByTagName("img")
@@ -168,7 +167,7 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
   }
 
 
-  submitComboLock(event : any){
+  submitComboLock(){
 
      if(this.filledGridTileCounter === 4){
 

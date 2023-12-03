@@ -18,8 +18,8 @@ export class LoginDoneComponent {
                     event.id === 1 &&
                     event.url === event.urlAfterRedirects
                   ) {
-                    this.router.navigate(["user/login"]);
-                    alert("Please Log in Again")
+                    this.router.navigate(["user/log-in"]);
+                    alert("Please log in again")
                   }
                 })
 

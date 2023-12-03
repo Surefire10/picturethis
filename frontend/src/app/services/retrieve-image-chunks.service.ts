@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IImage } from '../IImage';
+import {DomSanitizer} from '@angular/platform-browser';
+
 import { UserInformationPostService } from './user-information-post.service';
 
 
@@ -13,7 +15,7 @@ import { UserInformationPostService } from './user-information-post.service';
 export class RetrieveImageChunksService {
 
   constructor(private http: HttpClient,
-    private userInformationPostService: UserInformationPostService) {}
+   ) {}
 
    currentUserInput! : FormDataEntryValue
 
