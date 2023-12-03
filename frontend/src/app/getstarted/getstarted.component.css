@@ -1,18 +1,25 @@
 
-    
+body{
+
+  display: flex;
+
+}
+
+
+
 h3{
 
-    line-break: auto;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: white;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
-    line-height: normal;
+  line-break: auto;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 3.0rem;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  line-height: normal;
 
     
 }
@@ -20,11 +27,12 @@ h3{
 
 .get-started-container{
 
-  position: relative;
-  top: 130px;
-  left: 10%;
-  height: 60%;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+  height: 50%;
+  margin: 3.0rem;
   border-top:3px solid #2d943e;
   border-bottom:3px solid #2d943e;
   padding: 2.0rem
@@ -37,30 +45,69 @@ h3{
 .text-container{
 
   width: 40%;
-  height: 30%;
-  padding: 0.2rem;
+  
+
 
 }
 
 .button-container{
 
   width: 100%;
-  display: flex;
+  text-align: center;
   
 }
     
 .button-container button{
 
-  margin: 1.0rem auto;
-
+  padding: 0.5rem;
+  width: 70px;
 }
     
-
+/* 1280px */
 @media (min-width: 80.313rem ) {
 
   .text-container{
 
     width: 30%;
   }
+
+  .get-started-container{
+
+    width: 50%;
+
+  }
   
+}
+
+/* 450px */
+
+@media (max-width: 28.125rem) {
+
+  .text-container{
+
+    width: 30%;
+  }
+
+  h3{
+
+    font-size: 2.5rem;
+  }
+    
+  
+  body{
+
+  display: flex;
+  justify-content: space-around;
+
+  }
+
+}
+
+@media (max-width: 19.625rem) {
+
+  h3{
+
+    font-size: 1.5rem;
+  }
+
 }
