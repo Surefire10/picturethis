@@ -2,26 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h2>Dependicies:</h2>
 
-## Code scaffolding
+In order for frontend to run properly we need to use npm to install http-server to serve up images uploaded to server since they are uploaded to a local folder. 
+Most browsers dont allow for local files to be opend for security reasons
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+(This isn't the case when this project is deployed. Images are to be uploaded and served by a remote server or a cloud service but this just for demo and we're using a server here as well)
 
-## Build
+<h3>So how do I set it up?</h3>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1.Open terminal and type npm install -g http-server
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2.Go to the image upload folder on your machine, you'll find it under "C:\Users\yourname\Documents\GPIS" and open it in terminal.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3.Now type http-server ./
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Now make note of the port number in  the output of  terminal, something kinda like http://localhost:8081 will appear. Now everything in that folder will be okay for browser to serve under that port number.
+Example : "img src = "http://localhost:8081/imagename.png"
+
+
+
+
+
