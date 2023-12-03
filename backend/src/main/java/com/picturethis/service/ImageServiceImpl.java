@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.commons.io.FilenameUtils;
 import javax.imageio.ImageIO;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +30,8 @@ public class ImageServiceImpl implements  ImageService{
 
     private final Logger LOGGER = LoggerFactory.getLogger(ImageServiceImpl.class);
 
-    private final String  MAIN_IMAGE_PATH = System.getProperty("user.home") + "\\GPIS\\images";
+    private final String  MAIN_IMAGE_PATH = FileSystemView.getFileSystemView().getDefaultDirectory().getPath()
+            + "\\GPIS\\images";
     public void saveImageEntity(User user, UserModel userModel,MultipartFile imageFromUser){
 
 
@@ -43,7 +45,6 @@ public class ImageServiceImpl implements  ImageService{
 
 
         Path directory = Paths.get(MAIN_IMAGE_PATH);
-        String extension = FilenameUtils.getExtension(image.getOriginalFilename());
         try {
             Path pathAndName = Paths.get(MAIN_IMAGE_PATH, "\\"+image.getOriginalFilename());
             LOGGER.info("image saved to disk in this path: " + pathAndName);
@@ -66,8 +67,7 @@ public class ImageServiceImpl implements  ImageService{
 
         // we can't grab from repo if we don't even have the path assigned yet
         // String imagePath = imageRepository.findImagePathByusername(userModel.getUsername());
-        String imagePath = MAIN_IMAGE_PATH + "\\" +image.getOriginalFilename();
-        return imagePath;
+        return MAIN_IMAGE_PATH + "\\" +image.getOriginalFilename();
     }
     public String userSpecificFolderPath(UserModel userModel){
 

@@ -37,14 +37,18 @@ public class ImageController {
 
     // images have to be below 5 megabytes;
     //Here we're going to be using a middle-man server to bypass Chrome security
-    // web-server for chrome is what I'm using, on port 8886
+    // http-server is what I'm using, on port 8881
+    // check frontend readme for more info
 
 
     @GetMapping("/load_image_url/{username}/{index}")
     public ImageURLTransfer loadImageChunkLinkByIndex(@PathVariable String username , @PathVariable Long index){
 
-        String fullImagePathFromServer = "http://localhost:8086/images/" + username +"/" + index + ".jpg";
+        //change this to whatever port number it is in http-server terminal
+        String fullImagePathFromServer = "http://localhost:8081/images/" + username +"/" + index + ".jpg";
+//        String fullImagePathFromStorage = imageService.userSpecificFolderPath(username)+"\\"+index+".jpg";
         LOGGER.info("full image path after hitting loadImage endpoint: " + fullImagePathFromServer +" at "+ LocalTime.now());
+        System.out.println(fullImagePathFromServer);
         return new ImageURLTransfer(HttpStatus.OK, index, fullImagePathFromServer);
 
 
@@ -68,7 +72,10 @@ public class ImageController {
 
         for (int i = 1; i <= 4; i++) {
 
-            String fullImagePathFromServer = "http://127.0.0.1:8886/images/" + globalUserInput + "/" + i + ".jpg";
+            //change this to whatever port number it is in http-server terminal
+
+            String fullImagePathFromServer = "http://localhost:8081/images/" + globalUserInput + "/" + i + ".jpg";
+//            String fullImagePathFromStorage = imageService.userSpecificFolderPath(globalUserInput)+"\\"+i+".jpg";
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("imageIndex",i);
             jsonObject.put("imageURL", fullImagePathFromServer);
