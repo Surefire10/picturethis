@@ -4,7 +4,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { DragDropModule } from "@angular/cdk/drag-drop"
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule,RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +47,6 @@ import { LoginDoneComponent } from './login-done/login-done.component';
     HttpClientModule,
     BrowserAnimationsModule,
     DragDropModule,
-    MatGridListModule
     
     
 

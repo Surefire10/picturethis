@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild, } from '@angular/core';
 import { RetrieveImageChunksService } from '../services/retrieve-image-chunks.service';
-import {DomSanitizer} from '@angular/platform-browser';
 import { IImage } from '../IImage';
-import { filter, map, tap } from 'rxjs/operators'
+import { filter, } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router';
 import { HandleUserComboLockService } from '../services/handle-user-combo-lock.service';
@@ -31,7 +30,7 @@ export class ImageComboLockComponent implements OnInit, AfterViewInit {
               private handleUserComboLockService : HandleUserComboLockService,
               private renderer: Renderer2,
               private router: Router,
-              private sanitizer:DomSanitizer){
+              ){
                 this.router.events
                 .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
                 .subscribe(event => {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Validators, FormControl, FormGroup} from "@angular/forms"
+import {Validators, FormControl, FormGroup, } from "@angular/forms"
 import { UserInformationValidation } from '../validators/async-user-information-validators';
 import {PasswordMatchingValidator} from "../validators/password-confirmation-validator"
 import { UserInformationPostService } from '../services/user-information-post.service';
